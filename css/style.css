@@ -8,22 +8,25 @@ button{
 }
 body{
     background-color: rgb(18, 16, 29);
+    width: 100%;
 }
 
 /* navbar section start here */
 .navbar{
+    width: 85%;
+    margin: auto;
     display: flex;
-    margin: 35px 100px;
+    padding: 20px;
     justify-content: space-between;
     box-shadow: 0 4px 8px 0  rgb(0, 0, 0, 0.5)
 }
 .navbar .logo{
-    margin: 20px 0 0 0;
+    width: 40%;
 }
 .navbar img{
     width: 30px;
     height: 20px;
-    margin: 0px 5px;
+    
 }
 .logo span{
     font-size: 25px;
@@ -31,8 +34,8 @@ body{
 }
 
 ul{
+    width: 60%;
     display: flex;
-    margin: 20px 2rem;
     gap: 3rem;
     list-style-type: none;
 }
@@ -60,14 +63,12 @@ ul{
 
 /* main section starts here */
 .main{
-    margin: 100px 100px;
+    width: 85%;
     display: flex;
-    /* gap: 3%; */
+    margin: 50px auto;
 }
 .content{
-    width: 65%;
-    height: 40%;
-    margin: 15px 0;
+    width: 55%;
 }
 .content h1{
     font-size: 3rem;
@@ -81,9 +82,8 @@ ul{
 }
 .btn-group{
     margin-top: 25px;
-    margin-right: 20px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 .btn-1{
     padding: 20px 40px;
@@ -102,14 +102,8 @@ ul{
 button:hover{
     background-color: rgb(0, 124, 128);
 }
-.main-2 img{
-    width: 60%; 
-    height: 80%;
-    
-}
 .main-2{
-    width: 70%;
-    height: -10%;
+    width: 30%;
 }
 
 
@@ -120,127 +114,123 @@ button:hover{
 
 .columns{
     display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
     text-align: center;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
-.col-1{
+.col-1, .col-2, .col-3, .col-4{
     color: white;
-    /* border: 1px solid black; */
-    padding: 40px 40px;
+    width: 270px;
+    height: 190px;
+    padding: 40px;
     outline: none;
     box-shadow: 0 4px 8px 0  rgb(0, 0, 0, 0.5);
 }
-.col-1 i{
+.col-1 i, .col-2 i, .col-3 i, .col-4 i{
     color: aquamarine;
-    margin-bottom: 10px;
-    /* width: 30%;
-    height: 30%; */
+    margin: 20px 0;
 
-}
-.col-2{
-    color: white;
-    /* border: 1px solid black; */
-    padding: 40px 30px;
-    outline: none;
-    box-shadow: 0 4px 8px 0  rgb(0, 0, 0, 0.5);
-}
-.col-2 i{
-    color: rgb(0, 102, 255);
-    margin-bottom: 10px;
-}
-.col-3{
-    color: white;
-    /* border: 1px solid black; */
-    padding: 40px 40px;
-    outline: none;
-    box-shadow: 0 4px 8px 0  rgb(0, 0, 0, 0.5);
-}
-.col-3 i{
-    color: aquamarine;
-    margin-bottom: 10px;
-}
-.col-4{
-    color: white;
-    /* border: 1px solid black; */
-    padding: 40px 40px;
-    outline: none;
-    box-shadow: 0 4px 8px 0  rgb(0, 0, 0, 0.5);
-}
-.col-4 i{
-    color: aquamarine;
-    margin-bottom: 10px;
 }
 /* columns section ends here */
 
 /* Table section starts here */
 
 .table-section{
-    margin-top: 100px;
-    color: white;
+    width: 85%;
+    margin: 100px auto;
 }
 .title{
-    margin: auto;
     display: flex;
+    color: white;
     justify-content: space-evenly;
 } 
 table{
-    margin: auto;
-    margin-top: 15px;
-    width: 50%;
+    margin: 25px auto;
+    width: 75%;
     color: white;
-    padding: 10px;
+    
 }
 tr{
     text-align: center;
     line-height: 30px;
 }
 
-/* td i{
-    color: rgb(165, 112, 42);
-}
-tr .change{
-    color: rgb(0, 128, 75);
-} */
 /* Table section ends here */
 /* last section */
 .last-section{
     display: flex;
-    margin: 100px;
+    margin: 100px auto;
+    width: 85%;
     justify-content: space-between;
 }
 .text-section{
     color: white;
-    width: 70%;
+    width: 60%;
 }
 .btn-section{
-    width: 50%;
+    width: 25%;
 }
 /* media screen 1024 */
 
 @media screen and (max-width:1024px){
-    .navbar .logo {
+    /* .navbar .logo {
         padding: 0px 0 0 0;
     }
     img{
         width: 60%;
-    }
+    } */
 }
 
 /* media screen 768 */
 
 @media screen and (max-width: 768px){
-    .navbar .logo {
-        margin: -5px 0 0 0;
-    }
-    .main-2 img{
-        width: 80%; 
-        height: 90%;
-    
-    }
+.navbar {
+    justify-content: space-between;
 }
 
-@media screen and (max-width: 425px){
+.navbar .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    z-index: 1001; /* keep on top */
+}
+
+.navbar .nav-items {
+    display: none;            /* hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 10vh;                /* just below navbar */
+    right: 5%;
+    width: 200px;
+    background: #222;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: right;
+    opacity: 0;               /* invisible until active */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar .nav-items li a {
+    display: block;           /* show links */
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar .nav-items.active {
+    display: flex;            /* reveal menu */
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+}
+}
+
+
+
+@media (min-width: 320px) and (max-width: 620px){
     .columns{
         gap: 25px;
     }
@@ -248,9 +238,11 @@ tr .change{
         flex-direction: column;
     }
     .main-2 img{
-        width: 100%; 
-        height: 100%;
-        margin: 20px 0;
+        margin: auto;
+    }
+    .content{
+        width: auto;
+        margin: auto;
     }
     .columns{
         flex-direction: column;
@@ -258,25 +250,33 @@ tr .change{
     .nav-items{
         display: none;
     }
-    .navbar{
-        padding: 15px 0;
-    }
-    .content h1{
-        margin-bottom: 20px;
-    }
     .columns{
-        margin: 15px 50px;
+        margin: auto;
+    }
+    .btn-group .btn-1, .btn-2{
+        padding: 20px 80px;
+        
+    }
+    .btn-group .btn-2{
+        margin-top: 20px;
     }
     .btn-group{
         display: block;
+        width: 250px;
         
     }
-    .btn-1{
-        padding:15px 50%;
-        /* margin: 20px 0; */
+    .table-section{
+        margin: 30px auto;
     }
-    .btn-2{
-        padding:15px 50%;
-        margin: 20px 0;
+    .last-section {
+        flex-direction: column;
+    }
+    .last-section .text-section{
+        width: 300px;
+        margin: 30px 0;
+    }
+    .last-section .btn-1{
+        display: block;
+        padding: 10px 80px;
     }
 }

@@ -17,7 +17,7 @@
             <img src="images/logo.jpeg" alt="logo">
             <span>cryptoStation</span>
         </div>
-        <ul class="nav-items">
+        <ul class="nav-items" id="navItems">
             <li class="nav-links"><a href="#">Home</a></li>
             <li class="nav-links"><a href="#">Market</a></li>
             <li class="nav-links"><a href="#">Invests</a></li>
@@ -25,6 +25,7 @@
             <li class="nav-links"><a href="#" class="login">Login</a></li>
             <li class="nav-links"><i class="fa fa-sort" aria-hidden="true"></i></li>
         </ul>
+        <div class="hamburger" id="hamburger"> <i class="fas fa-bars"></i> </div>
     </nav>
 
     <!-- navbar  section ends here -->
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="main-2">
-            <img src="./images/bg-btc-removebg.png"class="image" alt="">
+            <img src="./images/bg-btc-removebg.png" width="300px" height="300px" class="image" alt="">
         </div>
     </div>
 
@@ -151,5 +152,21 @@
             <button type="submit" class="btn-1">Create Account</button>
         </div>
     </div>
+
+
+
+    <script>
+        const hamburger = document.getElementById('hamburger'); 
+        const navItems = document.getElementById('navItems'); 
+        const icon = hamburger.querySelector('i'); 
+        hamburger.addEventListener('click', ()=>{ 
+            navItems.classList.toggle('active'); 
+            hamburger.classList.toggle('active') 
+            if(icon.classList.contains('fa-bars')){ 
+                icon.classList.remove('fa-bars'); 
+                icon.classList.add('fa-xmark'); 
+            }else{ icon.classList.remove('fa-xmark'); 
+            icon.classList.add('fa-bars'); } }); 
+        </script>
 </body>
 </html>
